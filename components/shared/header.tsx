@@ -1,17 +1,17 @@
-import { cn } from "@/lib/utils";
-import React from "react";
-import { Container } from "./container";
-import Image from "next/image";
-import { Button } from "../ui";
-import { ArrowRight, ShoppingCart, User } from "lucide-react";
+import { cn } from '@/lib/utils'
+import React from 'react'
+import { Container } from './container'
+import Image from 'next/image'
+import { Button } from '../ui'
+import { ArrowRight, ShoppingCart, User } from 'lucide-react'
 
 interface Props {
-  className?: string;
+  className?: string
 }
 
 export const Header: React.FC<Props> = ({ className }) => {
   return (
-    <header className={cn("border border-b", className)}>
+    <header className={cn('border border-b', className)}>
       <Container className="flex items-center justify-between py-8">
         {/* Левая часть */}
         <div className="flex items-center gap-4">
@@ -24,13 +24,13 @@ export const Header: React.FC<Props> = ({ className }) => {
 
         {/* Правая часть */}
         <div className="flex items-center gap-3">
-          <Button variant="outline" className="flex items-center gap-1">
+          <Button variant="outline" className="flex items-center gap-1 cursor-pointer">
             <User size={16} />
             Войти
           </Button>
 
           <div>
-            <Button className="group relative">
+            <Button className="group relative cursor-pointer">
               <b>520 ₽</b>
               <span className="h-full w-[1px] bg-white/30 mx-3"></span>
               <div className="flex items-center gap-1 transition duration-300 group-hover:opacity-0">
@@ -46,5 +46,5 @@ export const Header: React.FC<Props> = ({ className }) => {
         </div>
       </Container>
     </header>
-  );
-};
+  )
+}
