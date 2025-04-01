@@ -13,11 +13,13 @@ export const Filters: React.FC<Props> = ({ className }) => {
     <div className={className}>
       <Title text="Фильтрация" size="sm" className="mb-5 font-medium" />
 
+      {/* Фильтры */}
       <div className="flex flex-col gap-4">
         <FilterCheckbox text="Можно собирать" value="1" />
         <FilterCheckbox text="Новинки" value="2" />
       </div>
 
+      {/* Цена */}
       <div className="mt-5 border-y border-y-neutral-100 py-6 pb-7">
         <p className="font-medium mb-3">Цена от и до: </p>
         <div className="flex gap-3 mb-5">
