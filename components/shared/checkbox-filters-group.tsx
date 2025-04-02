@@ -1,19 +1,19 @@
-import React from 'react';
-import { FilterCheckbox, FilterCheckboxProps } from './filter-checkbox';
-import { Input } from '../ui';
-import { it } from 'node:test';
+'use client'
+import React from 'react'
+import { FilterCheckbox, FilterCheckboxProps } from './filter-checkbox'
+import { Input } from '../ui'
 
-type Item = FilterCheckboxProps;
+type Item = FilterCheckboxProps
 
 interface Props {
-  title: string;
-  items: Item[];
-  defaultItems?: Item[];
-  limit?: number;
-  searchInputPlaceHolder?: string;
-  onChange?: (values: string[]) => void;
-  defaultValue?: string[];
-  className?: string;
+  title: string
+  items: Item[]
+  defaultItems?: Item[]
+  limit?: number
+  searchInputPlaceHolder?: string
+  onChange?: (values: string[]) => void
+  defaultValue?: string[]
+  className?: string
 }
 
 export const CheckboxFiltersGroup: React.FC<Props> = ({
@@ -37,14 +37,15 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
       <div className="flex flex-col gap-4 max-h-96 pr-2 overflow auto scrollbar">
         {items.map((item, index) => (
           <FilterCheckbox
-            onCheckedChange={() => onCheckedChange(item.value)}
-            checked={selected.has(item.value)}
-            key={String(item.value)}
-            value={item.value}
+            key={index}
             text={item.text}
-            endAdorment={item.endAdornment}
+            value={item.value}
+            endAdornment={item.endAdornment}
+            checked={false}
+            onCheckedChange={(ids) => console.log(ids)}
+          />
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
