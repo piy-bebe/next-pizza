@@ -34,7 +34,6 @@ model Product {
   name     String
   imageUrl String
 
-  createdAt  DateTime @default(now())
-  updated    DateTime @updatedAt
-  categoryId Int
+  createdAt DateTime @default(now())
+  updated   DateTime @updatedAt
 }
