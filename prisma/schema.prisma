@@ -19,12 +19,22 @@ model User {
   updatedAt DateTime @updatedAt
 }
 
+model Category {
+  id       Int       @unique @default(autoincrement())
+  name     String    @unique
+  products Product[]
+}
+
 model Product {
+  category   Category @relation(fields: [categoryId], references: [id])
+  categoryId Int
+
   id Int @id @default(autoincrement())
 
   name     String
   imageUrl String
 
-  createdAt DateTime @default(now())
-  updated   DateTime @updatedAt
+  createdAt  DateTime @default(now())
+  updated    DateTime @updatedAt
+  categoryId Int
 }
